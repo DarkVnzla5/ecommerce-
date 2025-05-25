@@ -1,0 +1,364 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Cordless Drill",
+            "description": "A powerful cordless drill with variable speed settings.",
+            "price": 89.99,
+            "brand": "DeWalt",
+            "thumbnail": "images/cordless_drill_thumbnail.jpg",
+            "images": [
+                "images/cordless_drill_1.jpg",
+                "images/cordless_drill_2.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Hammer",
+            "description": "A durable claw hammer for all your DIY needs.",
+            "price": 14.99,
+            "brand": "Stanley",
+            "thumbnail": "https://www.amazon.ca/sspa/click?ie=UTF8&spc=MTozNzQ1MzUzNzk3NjIyMjQzOjE3NDgxNzk1MDU6c3BfYXRmOjMwMDcwNTUzOTg1MzcwMjo6MDo6&url=%2FTOTAL-Magnetic-Anti-Slip-Drop-Forged-Fiberglass%2Fdp%2FB0D25MYFVQ%2Fref%3Dsr_1_2_sspa%3Fcrid%3D3I2JGAMICE8R2%26dib%3DeyJ2IjoiMSJ9.CsYk4Rlx6Mb4wjnU1KbaAlhJyTrwGTMr5FCpoqMRlHQF-CGJY13Xi_Z7fYp4I_5BKUsKiE5qdS4lDlXc9ke-mrZ7gj03YdhaN0eMW6zqhZQoZepss3fZ5kP4gqARvdPE2sw6U8Dgiu1r8d7slXA6Zy_XkqGEs_y_87RNXDJO0jlEzCy79X2bC1Wng57UCTB0b1f1u-Z51CkODNHH0O-ojlc983kAp0GeeUyq_3f1ye_7PjXZorc14T94_95gIkrTWj0ZrfbHe9bonjG5U_9tIw20sSbbSXIw0gi3zmPZeCo.OLnBKMgSG1cNbQER2nGarrs5OKEzmHUeaRUWGhopNXw%26dib_tag%3Dse%26keywords%3Dhammer%26qid%3D1748179505%26sprefix%3Dhammer%252Caps%252C131%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+            "images": [
+                "images/hammer_1.jpg",
+                "images/hammer_2.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Screwdriver Set",
+            "description": "A 10-piece screwdriver set with ergonomic handles.",
+            "price": 24.99,
+            "brand": "Craftsman",
+            "thumbnail": "images/screwdriver_set_thumbnail.jpg",
+            "images": [
+                "images/screwdriver_set_1.jpg",
+                "images/screwdriver_set_2.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Tape Measure",
+            "description": "A 25-foot tape measure with a locking mechanism.",
+            "price": 9.99,
+            "brand": "Milwaukee",
+            "thumbnail": "images/tape_measure_thumbnail.jpg",
+            "images": [
+                "images/tape_measure_1.jpg",
+                "images/tape_measure_2.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Adjustable Wrench",
+            "description": "A sturdy adjustable wrench for various bolt sizes.",
+            "price": 19.99,
+            "brand": "Husky",
+            "thumbnail": "images/adjustable_wrench_thumbnail.jpg",
+            "images": [
+                "images/adjustable_wrench_1.jpg",
+                "images/adjustable_wrench_2.jpg"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Circular Saw",
+            "description": "A high-performance circular saw for precise cuts.",
+            "price": 129.99,
+            "brand": "Bosch",
+            "thumbnail": "images/circular_saw_thumbnail.jpg",
+            "images": [
+                "images/circular_saw_1.jpg",
+                "images/circular_saw_2.jpg"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Pliers Set",
+            "description": "A 5-piece pliers set for gripping and cutting tasks.",
+            "price": 29.99,
+            "brand": "Klein Tools",
+            "thumbnail": "images/pliers_set_thumbnail.jpg",
+            "images": [
+                "images/pliers_set_1.jpg",
+                "images/pliers_set_2.jpg"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Utility Knife",
+            "description": "A retractable utility knife with extra blades.",
+            "price": 12.99,
+            "brand": "Fiskars",
+            "thumbnail": "images/utility_knife_thumbnail.jpg",
+            "images": [
+                "images/utility_knife_1.jpg",
+                "images/utility_knife_2.jpg"
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Workbench",
+            "description": "A sturdy workbench with a built-in vice.",
+            "price": 199.99,
+            "brand": "Black+Decker",
+            "thumbnail": "images/workbench_thumbnail.jpg",
+            "images": [
+                "images/workbench_1.jpg",
+                "images/workbench_2.jpg"
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Paint Roller Set",
+            "description": "A complete paint roller set with tray and extra rollers.",
+            "price": 19.99,
+            "brand": "Purdy",
+            "thumbnail": "images/paint_roller_set_thumbnail.jpg",
+            "images": [
+                "images/paint_roller_set_1.jpg",
+                "images/paint_roller_set_2.jpg"
+            ]
+        },
+        {
+            "id": 11,
+            "title": "Stud Finder",
+            "description": "An electronic stud finder for accurate wall scanning.",
+            "price": 29.99,
+            "brand": "Zircon",
+            "thumbnail": "images/stud_finder_thumbnail.jpg",
+            "images": [
+                "images/stud_finder_1.jpg",
+                "images/stud_finder_2.jpg"
+            ]
+        },
+        {
+            "id": 12,
+            "title": "Socket Set",
+            "description": "A 40-piece socket set with a ratchet wrench.",
+            "price": 49.99,
+            "brand": "GearWrench",
+            "thumbnail": "images/socket_set_thumbnail.jpg",
+            "images": [
+                "images/socket_set_1.jpg",
+                "images/socket_set_2.jpg"
+            ]
+        },
+        {
+            "id": 13,
+            "title": "Angle Grinder",
+            "description": "A compact angle grinder for cutting and grinding tasks.",
+            "price": 79.99,
+            "brand": "Makita",
+            "thumbnail": "images/angle_grinder_thumbnail.jpg",
+            "images": [
+                "images/angle_grinder_1.jpg",
+                "images/angle_grinder_2.jpg"
+            ]
+        },
+        {
+            "id": 14,
+            "title": "Level",
+            "description": "A 24-inch level for precise alignment.",
+            "price": 14.99,
+            "brand": "Empire",
+            "thumbnail": "images/level_thumbnail.jpg",
+            "images": [
+                "images/level_1.jpg",
+                "images/level_2.jpg"
+            ]
+        },
+        {
+            "id": 15,
+            "title": "Shop Vacuum",
+            "description": "A powerful shop vacuum for cleaning up debris.",
+            "price": 99.99,
+            "brand": "Ridgid",
+            "thumbnail": "images/shop_vacuum_thumbnail.jpg",
+            "images": [
+                "images/shop_vacuum_1.jpg",
+                "images/shop_vacuum_2.jpg"
+            ]
+        },
+        {
+            "id": 16,
+            "title": "Extension Cord",
+            "description": "A 50-foot heavy-duty extension cord.",
+            "price": 34.99,
+            "brand": "Southwire",
+            "thumbnail": "images/extension_cord_thumbnail.jpg",
+            "images": [
+                "images/extension_cord_1.jpg",
+                "images/extension_cord_2.jpg"
+            ]
+        },
+        {
+            "id": 17,
+            "title": "Safety Glasses",
+            "description": "Protective safety glasses with anti-fog coating.",
+            "price": 9.99,
+            "brand": "3M",
+            "thumbnail": "images/safety_glasses_thumbnail.jpg",
+            "images": [
+                "images/safety_glasses_1.jpg",
+                "images/safety_glasses_2.jpg"
+            ]
+        },
+        {
+            "id": 18,
+            "title": "Toolbox",
+            "description": "A portable toolbox with multiple compartments.",
+            "price": 39.99,
+            "brand": "Keter",
+            "thumbnail": "images/toolbox_thumbnail.jpg",
+            "images": [
+                "images/toolbox_1.jpg",
+                "images/toolbox_2.jpg"
+            ]
+        },
+        {
+            "id": 19,
+            "title": "Ladder",
+            "description": "A 6-foot aluminum step ladder.",
+            "price": 79.99,
+            "brand": "Werner",
+            "thumbnail": "images/ladder_thumbnail.jpg",
+            "images": [
+                "images/ladder_1.jpg",
+                "images/ladder_2.jpg"
+            ]
+        },
+        {
+            "id": 20,
+            "title": "Caulking Gun",
+            "description": "A heavy-duty caulking gun for sealing tasks.",
+            "price": 14.99,
+            "brand": "Newborn",
+            "thumbnail": "images/caulking_gun_thumbnail.jpg",
+            "images": [
+                "images/caulking_gun_1.jpg",
+                "images/caulking_gun_2.jpg"
+            ]
+        },
+        {
+            "id": 21,
+            "title": "Heat Gun",
+            "description": "A versatile heat gun with adjustable temperature settings.",
+            "price": 49.99,
+            "brand": "Wagner",
+            "thumbnail": "images/heat_gun_thumbnail.jpg",
+            "images": [
+                "images/heat_gun_1.jpg",
+                "images/heat_gun_2.jpg"
+            ]
+        },
+        {
+            "id": 22,
+            "title": "Wire Stripper",
+            "description": "A precision wire stripper for electrical work.",
+            "price": 19.99,
+            "brand": "Irwin",
+            "thumbnail": "images/wire_stripper_thumbnail.jpg",
+            "images": [
+                "images/wire_stripper_1.jpg",
+                "images/wire_stripper_2.jpg"
+            ]
+        },
+        {
+            "id": 23,
+            "title": "Air Compressor",
+            "description": "A portable air compressor for inflating and powering tools.",
+            "price": 149.99,
+            "brand": "Porter-Cable",
+            "thumbnail": "images/air_compressor_thumbnail.jpg",
+            "images": [
+                "images/air_compressor_1.jpg",
+                "images/air_compressor_2.jpg"
+            ]
+        },
+        {
+            "id": 24,
+            "title": "Chisel Set",
+            "description": "A 4-piece chisel set for woodworking projects.",
+            "price": 29.99,
+            "brand": "Narex",
+            "thumbnail": "images/chisel_set_thumbnail.jpg",
+            "images": [
+                "images/chisel_set_1.jpg",
+                "images/chisel_set_2.jpg"
+            ]
+        },
+        {
+            "id": 25,
+            "title": "Hacksaw",
+            "description": "A durable hacksaw for cutting metal and plastic.",
+            "price": 14.99,
+            "brand": "Lenox",
+            "thumbnail": "images/hacksaw_thumbnail.jpg",
+            "images": [
+                "images/hacksaw_1.jpg",
+                "images/hacksaw_2.jpg"
+            ]
+        },
+        {
+            "id": 26,
+            "title": "Work Gloves",
+            "description": "Heavy-duty work gloves for hand protection.",
+            "price": 12.99,
+            "brand": "Mechanix",
+            "thumbnail": "images/work_gloves_thumbnail.jpg",
+            "images": [
+                "images/work_gloves_1.jpg",
+                "images/work_gloves_2.jpg"
+            ]
+        },
+        {
+            "id": 27,
+            "title": "Drill Bit Set",
+            "description": "A 20-piece drill bit set for various materials.",
+            "price": 34.99,
+            "brand": "Bosch",
+            "thumbnail": "images/drill_bit_set_thumbnail.jpg",
+            "images": [
+                "images/drill_bit_set_1.jpg",
+                "images/drill_bit_set_2.jpg"
+            ]
+        },
+        {
+            "id": 28,
+            "title": "Flashlight",
+            "description": "A high-lumen LED flashlight for dark spaces.",
+            "price": 24.99,
+            "brand": "Maglite",
+            "thumbnail": "images/flashlight_thumbnail.jpg",
+            "images": [
+                "images/flashlight_1.jpg",
+                "images/flashlight_2.jpg"
+            ]
+        },
+        {
+            "id": 29,
+            "title": "Sander",
+            "description": "A handheld sander for smooth finishing.",
+            "price": 59.99,
+            "brand": "Ryobi",
+            "thumbnail": "images/sander_thumbnail.jpg",
+            "images": [
+                "images/sander_1.jpg",
+                "images/sander_2.jpg"
+            ]
+        },
+        {
+            "id": 30,
+            "title": "Tool Belt",
+            "description": "A durable tool belt with multiple pockets.",
+            "price": 29.99,
+            "brand": "CLC",
+            "thumbnail": "images/tool_belt_thumbnail.jpg",
+            "images": [
+                "images/tool_belt_1.jpg",
+                "images/tool_belt_2.jpg"
+            ]
+        }
+    ]
+}
