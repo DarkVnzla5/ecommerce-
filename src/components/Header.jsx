@@ -1,20 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { IoPersonCircleSharp } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState("halloween");
+  const toggleSearch = () => {
+    setIsOpen(!isOpen);
+  }; // Toggle the search bar visibility
   const handleThemeChange = (event) => {
     const selectedTheme = event.target.value;
     setTheme(selectedTheme);
     document.documentElement.setAttribute("data-theme", selectedTheme);
   };
+  useEffect(() => {
+    fetch("https://pydolarve.org/api/v1/dolar?page=bcv").then((response) =>
+      response.json().then((data) => {
+        const bcv = data.data.bcv;
+        document.documentElement.style.setProperty("--bcv", bcv);
+      })
+    );
+  }),
+    [];
+
   return (
-    <nav className=" grid-cols-4  w-full bg-primary-content items-center justify-around gap-4">
+    <nav className=" grid lg:grid-cols-4 w-full m-2 bg-base-300 items-center justify-around gap-4">
       {/* Left Section: Logo and Name */}
-      <section className="grid items-center">
+      <section className="flex items-center justify-between gap-2">
         <a href="">
-          <img src="/logo.png" alt="Vuelvan Caras Logo" className="h-10 mr-3" />
+          <img
+            src="\Logo.jpg"
+            alt="Vuelvan Caras Logo"
+            className="h-20 w-24 mr-28 aspect-video shadow-lg"
+          />
         </a>
-        <span className="font-bold text-primary text-lg">
+        <span className="font-bold text-primary">
           Comercial Vuelvan Caras, C.A.
         </span>
       </section>
@@ -24,16 +44,19 @@ const Header = () => {
         <input
           type="text"
           placeholder="Buscar productos..."
-          className="max-md:hidden lg:w-xs p-2 rounded border bg-primary-content text-primary focus:outline-none focus:ring-2 focus:ring-info-content"
+          className="max-md:hidden lg:w-xs p-2 rounded border bg-primary-content text-primary focus:outline-none focus:ring-2 focus:ring-info-content twmerge{isOpen ? 'block' : 'hidden'}"
         />
+        <button className="w-auto btn btn-primary  hover:btn-accent ml-2">
+          <IoSearch onClick={toggleSearch} />
+        </button>
         <button className="w-auto btn btn-primary hover:btn-accent ml-2">
           Buscar
         </button>
       </section>
 
       {/* Right Section: Theme Dropdown */}
-      <section>
-        <div className=" flex dropdown ">
+      <section className="flex justify-end">
+        <div className=" flex dropdown">
           <div
             tabIndex={-1}
             role="button"
@@ -136,17 +159,19 @@ const Header = () => {
             className="btn btn-ghost btn-circle avatar"
           >
             <div className="w-10 rounded-full">
-              <img src="" alt="Logo empresa" />
+              <IoPersonCircleSharp className="size-full " />
             </div>
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm text-primary bg-primary-content dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
               <a className="justify-between" href="">
                 Perfil
-                <span className="badge">Nuevo</span>
+                <span className="badge text-primary bg-primary-content">
+                  Nuevo
+                </span>
               </a>
             </li>
             <li>
@@ -158,38 +183,6 @@ const Header = () => {
           </ul>
         </div>
       </section>
-      <section>
-        <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 3h18a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V5a2 2 0 012-2zM9.75 9.75l4.5-4.5m0 0l4.5 4.5m-4.5-4.5v12m0-12l-4.5 4.5m4.5-4.5l4.5 4.5m-4.5-4.5v12"
-              />
-            </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
-            <li>
-              <a href="">Notificaciones</a>
-            </li>
-            <li>
-              <a href="">Mensajes</a>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section></section>
     </nav>
   );
 };
