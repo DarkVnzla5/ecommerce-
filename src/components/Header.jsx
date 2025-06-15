@@ -21,7 +21,6 @@ const Header = () => {
           "https://ve.dolarapi.com/v1/dolares/oficial"
         );
         const data = await response.json();
-        localStorage.setItem("dolarPromedio", data.promedio);
         setDolarPromedio(data.promedio);
       } catch (error) {
         console.error("Error al obtener el valor del dólar:", error);
@@ -41,6 +40,7 @@ const Header = () => {
             className="h-20 w-24 mr-28 aspect-video shadow-lg"
           />
         </a>
+
         <span className="font-bold text-primary">
           Comercial Vuelvan Caras, C.A.
         </span>

@@ -25,7 +25,7 @@ const App = () => {
         console.error("ErrorBoundary caught an error: ", error, info);
       }}
     >
-      <body className="flex w-auto ">
+      <div className="flex flex-col w-auto ">
         <Header />
         <main>
           <Menu />
@@ -33,7 +33,7 @@ const App = () => {
           <Products products={products} />
         </main>
         <Footer />
-      </body>
+      </div>
     </ErrorBoundary>
   );
 };
