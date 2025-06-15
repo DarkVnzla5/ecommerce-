@@ -3,8 +3,9 @@ import { IoPersonCircleSharp } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [theme, setTheme] = useState("halloween");
+  const [dolarPromedio, setDolarPromedio] = useState(null);
   const toggleSearch = () => {
     setIsOpen(!isOpen);
   }; // Toggle the search bar visibility
@@ -14,14 +15,20 @@ const Header = () => {
     document.documentElement.setAttribute("data-theme", selectedTheme);
   };
   useEffect(() => {
-    fetch("https://pydolarve.org/api/v1/dolar?page=bcv").then((response) =>
-      response.json().then((data) => {
-        const bcv = data.data.bcv;
-        document.documentElement.style.setProperty("--bcv", bcv);
-      })
-    );
-  }),
-    [];
+    const fetchDolar = async () => {
+      try {
+        const response = await fetch(
+          "https://ve.dolarapi.com/v1/dolares/oficial"
+        );
+        const data = await response.json();
+        localStorage.setItem("dolarPromedio", data.promedio);
+        setDolarPromedio(data.promedio);
+      } catch (error) {
+        console.error("Error al obtener el valor del dólar:", error);
+      }
+    };
+    fetchDolar();
+  }, []);
 
   return (
     <nav className=" grid lg:grid-cols-4 w-full m-2 bg-base-300 items-center justify-around gap-4">
@@ -41,21 +48,48 @@ const Header = () => {
 
       {/* Center Section: Search Bar */}
       <section className="flex justify-center ">
-        <input
-          type="text"
-          placeholder="Buscar productos..."
-          className="max-md:hidden lg:w-xs p-2 rounded border bg-primary-content text-primary focus:outline-none focus:ring-2 focus:ring-info-content twmerge{isOpen ? 'block' : 'hidden'}"
-        />
-        <button className="w-auto btn btn-primary  hover:btn-accent ml-2">
-          <IoSearch onClick={toggleSearch} />
-        </button>
+        <div className="flex items-center">
+          <button
+            type="button"
+            onClick={toggleSearch}
+            className="btn btn-ghost btn-circle mr-2"
+            aria-label="Mostrar/ocultar búsqueda"
+          >
+            <IoSearch size={24} />
+          </button>
+          {isOpen && (
+            <input
+              type="text"
+              placeholder="Buscar productos..."
+              className="input input-bordered max-md:hidden transition-all duration-300"
+            />
+          )}
+        </div>
         <button className="w-auto btn btn-primary hover:btn-accent ml-2">
           Buscar
         </button>
       </section>
+      {/* Center Section: Dólar Promedio */}
+      <section className="flex justify-center items-center gap-2 ">
+        <div className="text-primary font-bold">
+          <span>
+            Dólar BCV:{" "}
+            {dolarPromedio ? (
+              <span>
+                {new Intl.NumberFormat("es-VE", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(dolarPromedio)}
+              </span>
+            ) : (
+              <span className="text-red-500">Cargando...</span>
+            )}
+          </span>
+        </div>
+      </section>
 
       {/* Right Section: Theme Dropdown */}
-      <section className="flex justify-end">
+      <section className="flex">
         <div className=" flex dropdown">
           <div
             tabIndex={-1}
@@ -151,7 +185,7 @@ const Header = () => {
         </div>
       </section>
       {/* Profiles*/}
-      <section>
+      <section className="flex">
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}

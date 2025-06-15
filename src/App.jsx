@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu";
 import { ErrorBoundary } from "react-error-boundary";
+import filteredProducts from "./components/Menu";
 
 import "./App.css";
 
@@ -15,7 +16,9 @@ const App = () => {
           <h2>Ups.. Error 404</h2>
           <h3>{error.message}</h3>
 
-          <button onClick={resetErrorBoundary}>Try again</button>
+          <button className="btn-error" onClick={resetErrorBoundary}>
+            Try again
+          </button>
         </div>
       )}
       onError={(error, info) => {
@@ -26,7 +29,8 @@ const App = () => {
         <Header />
         <main>
           <Menu />
-          {<filteredProducts products={products} />}
+          {/* <filteredProducts products={products} /> */}
+          <Products products={products} />
         </main>
         <Footer />
       </body>
