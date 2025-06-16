@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
 
-const Header = () => {
+function Header() {
   const [isOpen, setIsOpen] = useState(true);
   const [theme, setTheme] = useState("halloween");
   const [dolarPromedio, setDolarPromedio] = useState(null);
@@ -30,7 +30,7 @@ const Header = () => {
   }, []);
 
   return (
-    <nav className=" grid lg:grid-cols-4 w-full m-2 bg-base-300 items-center justify-around gap-4">
+    <nav className="flex flex-wrap justify-evenly w-full m-2 bg-base-300 items-center gap-2">
       {/* Left Section: Logo and Name */}
       <section className="flex items-center justify-between gap-2">
         <a href="">
@@ -41,7 +41,7 @@ const Header = () => {
           />
         </a>
 
-        <span className="font-bold text-primary">
+        <span className="font-bold text-primary p-4 rounded-lg shadow-lg hover:bg-base-content transition-all duration-300 cursor-pointer">
           Comercial Vuelvan Caras, C.A.
         </span>
       </section>
@@ -219,5 +219,5 @@ const Header = () => {
       </section>
     </nav>
   );
-};
+}
 export default Header;

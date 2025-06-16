@@ -1,10 +1,13 @@
 const Products = ({ products }) => {
   return (
-    <section className="relative bg-base-300 w-full flex flex-wrap justify-around items-center ">
+    <section className="relative bg-base-300 w-full flex flex-nowrap justify-around items-center ">
       <div className="gap-4">
         <ul className="text-primary grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {products.map((product) => (
-            <li key={product.id} className="card bg-base-300 p-2 size-full">
+            <li
+              key={product.id}
+              className="card bg-primary-content p-2 size-full"
+            >
               <a href={""}>
                 <figure>
                   <img
@@ -23,10 +26,6 @@ const Products = ({ products }) => {
                 </p>
                 <div>
                   <span className="font-bold">Price:</span> ${product.price}
-                </div>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Add To Cart</button>
-                  <button className="btn btn-primary">Buy Now</button>
                 </div>
               </div>
             </li>

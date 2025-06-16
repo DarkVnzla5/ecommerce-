@@ -4,62 +4,81 @@ import { products as InitialProducts } from "../mocks/products.json";
 const Menu = () => {
   const [products] = useState(InitialProducts);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState({ category: "Todos", minPrice: 0 });
-  const filteredProducts = (products) => {
+  const [filters, setFilters] = useState({
+    category: "Todos",
+    minPrice: 0,
+    brand: "Todos",
+  });
+  function filterProducts(products) {
     return products.filter((product) => {
       return (
-        product.price >= filter.minPrice &&
-        (filter.category === "Todos" || product.category === filter.category) &&
-        (product.name.toLowerCase().includes(search.toLowerCase()) ||
-          product.description.toLowerCase().includes(search.toLowerCase()))
+        product.price >= filters.minPrice &&
+        (filters.category === "Todos" ||
+          product.category === filters.category) &&
+        (filters.brand === "Todos" || product.brand === filters.brand) &&
+        product.title.toLowerCase().includes(search.toLowerCase()) &&
+        product.description.toLowerCase().includes(search.toLowerCase())
+        // You can add more filtering conditions here if needed
       );
     });
-  };
+  }
+  const filteredProducts = filterProducts(products);
+
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
-    setFilter((prevFilter) => ({
+    setFilters((prevFilter) => ({
       ...prevFilter,
       [name]: value,
     }));
   };
 
   return (
-    <section className="relative bg-base-300 w-full flex flex-wrap justify-around items-center ">
-      <div className="gap-4">
-        <div className="flex flex-col items-center">
-          <input
-            type="text"
-            placeholder="Buscar productos..."
-            value={search}
-            onChange={handleSearchChange}
-            className="input input-bordered input-primary w-full max-w-xs mb-4"
-          />
-          <select
-            name="category"
-            value={filter.category}
-            onChange={handleFilterChange}
-            className="select select-primary w-full max-w-xs mb-4"
-          >
-            <option value="Todos">Todos</option>
-            <option value="Herramientas Electricas">
-              Herramientas Electricas
-            </option>
-            <option value="Herramientas Manuales">Herramientas Manuales</option>
-            <option value="Pintura y Acabados">Pintura y Acabados</option>
-            <option value="Jardineria">Jardineria</option>
-          </select>
-          <input
-            type="number"
-            name="minPrice"
-            placeholder="Precio minimo"
-            value={filter.minPrice}
-            onChange={handleFilterChange}
-            className="input input-bordered input-primary w-full max-w-xs mb-4"
-          />
-        </div>
+    <section className="flex items-center justify-center gap-4 p-4 bg-base-300 text-primary">
+      <div>
+        <input
+          type="text"
+          placeholder="Buscar productos..."
+          value={search}
+          onChange={handleSearchChange}
+          className="input input-bordered w-full max-w-xs"
+        />
+      </div>
+      <div>
+        <select
+          name="category"
+          value={filters.category}
+          onChange={handleFilterChange}
+          className="select select-bordered w-full max-w-xs"
+        >
+          <option value="Todos">Todos</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Home">Home</option>
+        </select>
+      </div>
+      <div>
+        <input
+          type="number"
+          name="minPrice"
+          placeholder="Precio mínimo"
+          value={filters.minPrice}
+          onChange={handleFilterChange}
+          className="input input-bordered w-full max-w-xs"
+        />
+      </div>
+      <div>
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            const results = filteredProducts(products);
+            console.log("Resultados de la búsqueda:", results);
+          }}
+        >
+          Buscar
+        </button>
       </div>
     </section>
   );
