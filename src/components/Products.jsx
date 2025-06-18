@@ -1,11 +1,11 @@
 import React from "react";
-import { Products as Array } from "../mocks/products.json";
+import { Products as List } from "../mocks/products.json";
 function Products() {
   function manageArray() {
-    const Things = Array.map((product) => {
+    const Things = List.map((product) => {
       return {
         id: product.id,
-        name: product.name,
+        title: product.title,
         description: product.description,
         image: product.thumbnail,
         brand: product.brand,
@@ -24,10 +24,10 @@ function Products() {
               className="card w-96 bg-base-100 shadow-xl image-full"
             >
               <figure>
-                <img src={product.thumbnail} alt={product.name} />
+                <img src={product.thumbnail} alt={product.title} />
               </figure>
               <div className="card-body">
-                <p className="card-title">{product.name}</p>
+                <p className="card-title">{product.title}</p>
                 <p>{product.description}</p>
               </div>
             </li>
