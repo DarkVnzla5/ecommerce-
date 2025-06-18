@@ -1,9 +1,8 @@
 import Products from "./components/Products";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Menu from "./components/Menu";
+// import { Menu, filteredProducts } from "./components/Menu";
 import { ErrorBoundary } from "react-error-boundary";
-import filteredProducts from "./components/Menu";
 
 import "./App.css";
 
@@ -30,8 +29,8 @@ const App = () => {
       <div className="flex flex-col w-auto ">
         <Header />
         <main>
-          <Menu />
-          <Products products={filteredProducts} />
+          <Products />
+          {/* <Menu products={filteredProducts} /> */}
         </main>
         <Footer />
       </div>

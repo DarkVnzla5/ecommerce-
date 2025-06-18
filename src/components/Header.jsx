@@ -22,6 +22,7 @@ function Header() {
         );
         const data = await response.json();
         setDolarPromedio(data.promedio);
+        console.log(data);
       } catch (error) {
         console.error("Error al obtener el valor del dólar:", error);
       }

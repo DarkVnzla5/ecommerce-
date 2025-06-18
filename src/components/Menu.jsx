@@ -1,28 +1,25 @@
 import React, { useState } from "react";
-import { products as InitialProducts } from "../mocks/products.json";
+import { Products as InitialProducts } from "../mocks/products.json";
 
 const Menu = () => {
-  const [products] = useState(InitialProducts);
+  const [Products] = useState(InitialProducts);
   const [search, setSearch] = useState("");
   const [filters, setFilters] = useState({
     category: "Todos",
     minPrice: 0,
     brand: "Todos",
   });
-  function filterProducts(products) {
-    return products.filter((product) => {
-      return (
-        product.price >= filters.minPrice &&
-        (filters.category === "Todos" ||
-          product.category === filters.category) &&
-        (filters.brand === "Todos" || product.brand === filters.brand) &&
-        product.title.toLowerCase().includes(search.toLowerCase()) &&
-        product.description.toLowerCase().includes(search.toLowerCase())
-        // You can add more filtering conditions here if needed
-      );
-    });
-  }
-  const filteredProducts = filterProducts(products);
+  // function filterProducts(products) {
+  //   return products.filter((product) => {
+  //     return (
+  //       product.price >= filters.minPrice &&
+  //       (filters.category === "Todos" ||
+  //         product.category === filters.category) &&
+  //       (filters.brand === "Todos" || product.brand === filters.brand)
+  //     );
+  //   });
+  // }
+  // const filteredProducts = filterProducts(products);
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
@@ -69,17 +66,17 @@ const Menu = () => {
           className="input input-bordered w-full max-w-xs"
         />
       </div>
-      <div>
+      {/* <div>
         <button
           className="btn btn-primary"
           onClick={() => {
             const results = filteredProducts(products);
-            console.log("Resultados de la búsqueda:", results);
+            <p>{results}</p>;
           }}
         >
           Buscar
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };
