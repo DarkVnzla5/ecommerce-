@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
 import { IoPersonCircleSharp } from "react-icons/io5";
-import { IoSearch } from "react-icons/io5";
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(true);
   const [theme, setTheme] = useState("halloween");
   const [dolarPromedio, setDolarPromedio] = useState(null);
-  const toggleSearch = () => {
-    setIsOpen(!isOpen);
-  }; // Toggle the search bar visibility
+
   const handleThemeChange = (event) => {
     const selectedTheme = event.target.value;
     setTheme(selectedTheme);
@@ -42,34 +38,13 @@ function Header() {
           />
         </a>
 
-        <span className="font-bold text-primary p-4 rounded-lg shadow-lg hover:bg-base-content transition-all duration-300 cursor-pointer">
+        <span className="font-bold text-primary p-4 rounded-lg shadow-lg hover:bg-base-content transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 cursor-pointer">
           Comercial Vuelvan Caras, C.A.
         </span>
       </section>
 
       {/* Center Section: Search Bar */}
-      <section className="flex justify-center ">
-        <div className="flex items-center">
-          <button
-            type="button"
-            onClick={toggleSearch}
-            className="btn btn-ghost btn-circle mr-2"
-            aria-label="Mostrar/ocultar búsqueda"
-          >
-            <IoSearch size={24} />
-          </button>
-          {isOpen && (
-            <input
-              type="text"
-              placeholder="Buscar productos..."
-              className="input input-bordered max-md:hidden transition-all duration-300"
-            />
-          )}
-        </div>
-        <button className="w-auto btn btn-primary hover:btn-accent ml-2">
-          Buscar
-        </button>
-      </section>
+
       {/* Center Section: Dólar Promedio */}
       <section className="flex justify-center items-center gap-2 ">
         <div className="text-primary font-bold">

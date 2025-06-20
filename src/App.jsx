@@ -1,12 +1,13 @@
 import Products from "./components/Products";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import { Menu, filteredProducts } from "./components/Menu";
+import Filters from "./components/Filters";
+import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
 import "./App.css";
 
-const App = () => {
+function App() {
   return (
     <ErrorBoundary
       fallbackRender={({ error, resetErrorBoundary }) => (
@@ -26,16 +27,18 @@ const App = () => {
         console.error("ErrorBoundary caught an error: ", error, info);
       }}
     >
-      <div className="flex flex-col w-auto ">
+      <div className="flex flex-col w-100vw h-100vh">
         <Header />
+        <Filters />
         <main>
-          <Products />
-          {/* <Menu products={filteredProducts} /> */}
+          <div className="container mx-auto">
+            <Products />
+          </div>
         </main>
         <Footer />
       </div>
     </ErrorBoundary>
   );
-};
+}
 
 export default App;

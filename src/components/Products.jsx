@@ -1,41 +1,35 @@
-import React from "react";
-import { Products as List } from "../mocks/products.json";
+import { products } from "../Mocks/products";
 function Products() {
-  function manageArray() {
-    const Things = List.map((product) => {
-      return {
-        id: product.id,
-        title: product.title,
-        description: product.description,
-        image: product.thumbnail,
-        brand: product.brand,
-        price: product.price,
-      };
-    });
-    return Things;
-  }
   return (
-    <section className="relative bg-base-300 w-full flex flex-nowrap justify-around items-center ">
-      <div className="gap-4">
-        <ul className="text-primary grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
-          {manageArray().map((product) => (
-            <li
-              key={product.id}
-              className="card w-96 bg-base-100 shadow-xl image-full"
-            >
-              <figure>
-                <img src={product.thumbnail} alt={product.title} />
-              </figure>
-              <div className="card-body">
-                <p className="card-title">{product.title}</p>
-                <p>{product.description}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section>
+      <ul className="max-lg:gap-4 grid max-sm:items-center max-sm:justify-center lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
+        {products.map((product) => (
+          <li
+            key={product.id}
+            className="card-sm card w-96 gap-2 p-5 bg-base-300 shadow-xl"
+          >
+            <figure>
+              <img
+                src={product.thumbnail}
+                alt={product.name}
+                className="aspect-video h-full w-full block"
+              />
+            </figure>
+
+            <div className="text-primary card-title">
+              <p>{product.description}</p>
+            </div>
+            <div>
+              <p>{product.price} $</p>
+            </div>
+            <div>
+              <p>{product.brand}</p>
+              <p>{product.category}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
-
 export default Products;
